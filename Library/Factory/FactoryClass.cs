@@ -1,4 +1,5 @@
-﻿using Library.Model;
+﻿using Library.EventsExample;
+using Library.Model;
 using Library.Utilities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,21 @@ namespace Library.Factory
         public static Person GetPerson()
         {
             return new Person(new Logger());
+        }
+
+        public static VideoEncoder GetVideoEncoder()
+        {
+            return new VideoEncoder();
+        }
+
+        public static MailService GetMailService()
+        {
+            return new MailService();
+        }
+
+        public static MessageService GetMessageService()
+        {
+            return new MessageService();
         }
 
         public static LibraryStore GetLibraryStore()
