@@ -6,6 +6,6 @@ namespace Library.EventsExample
 {
     public class Video
     {
-        public string encodeData { get; set; }
+        public string Title { get; set; }
     }
 }

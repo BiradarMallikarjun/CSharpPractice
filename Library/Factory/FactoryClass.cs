@@ -1,4 +1,5 @@
 ﻿using Library.EventsExample;
+using Library.EventsExample.RadioBroadcast;
 using Library.Model;
 using Library.Utilities;
 using System;
@@ -22,6 +23,16 @@ namespace Library.Factory
         public static VideoEncoder GetVideoEncoder()
         {
             return new VideoEncoder();
+        }
+
+        public static Video GetVideo()
+        {
+            return new Video();
+        }
+
+        internal static Radio GetRadio()
+        {
+            return new Radio();
         }
 
         public static MailService GetMailService()
@@ -50,6 +61,16 @@ namespace Library.Factory
         public static YieldExample GetYield()
         {
             return new YieldExample();
+        }
+
+        internal static RadioBroadCast GetRadioBroadCast()
+        {
+            return new RadioBroadCast();
+        }
+
+        internal static FMRadio GetFMRadio()
+        {
+            return new FMRadio();
         }
     }
 }

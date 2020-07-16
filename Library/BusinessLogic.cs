@@ -1,7 +1,9 @@
 ﻿using Library.EventsExample;
+using Library.EventsExample.RadioBroadcast;
 using Library.Factory;
 using Library.Model;
 using Library.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -23,11 +25,11 @@ namespace Library
         public void ProcessData()
         {
             _logger.Log("BusinessLogic.ProcessData() started...");
-            
-            
-            //TODO:
-            //EventExample();
 
+
+            //TODO:
+            //Delegates.EventExample();
+            //Delegates.EventRadioExample();
             //YieldExample.YieldMethod();
 
             //Delegates.DelegateMethod();
@@ -40,17 +42,6 @@ namespace Library
             //ls.TernaryConditionsNew();
 
             _logger.Log("BusinessLogic.ProcessData() ended...");
-        }
-
-        private static void EventExample()
-        {
-            var videoEncoder = FactoryClass.GetVideoEncoder();
-            var mail = FactoryClass.GetMailService();
-            var message = FactoryClass.GetMessageService();
-
-            videoEncoder.VideoEncoded += mail.OnvideoEncoded;
-            videoEncoder.VideoEncoded += message.OnVideoEncoded;
-            videoEncoder.Encode();
-        }
+        }      
     }
 }

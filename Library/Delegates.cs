@@ -1,4 +1,5 @@
-﻿using Library.Factory;
+﻿using Library.EventsExample.RadioBroadcast;
+using Library.Factory;
 using Library.Model;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,27 @@ namespace Library
             var delExample = FactoryClass.GetDelegates();
             delExample.GetAdultPerson();
             delExample.GetKids();
+        }
+
+        internal static void EventRadioExample()
+        {
+            var radioBroadcaster = FactoryClass.GetRadioBroadCast();
+
+            var fmRadio = FactoryClass.GetFMRadio();
+            radioBroadcaster.NewsBroadCasted += fmRadio.OnNewsBroadCasted;
+
+            radioBroadcaster.NewsBroadCast();
+        }
+
+        internal static void EventExample()
+        {
+            var videoEncoder = FactoryClass.GetVideoEncoder();
+            var mail = FactoryClass.GetMailService();
+            var message = FactoryClass.GetMessageService();
+
+            videoEncoder.VideoEncoded += mail.OnvideoEncoded;
+            videoEncoder.VideoEncoded += message.OnVideoEncoded;
+            videoEncoder.Encode();
         }
     }
 }

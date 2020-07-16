@@ -6,9 +6,9 @@ namespace Library.EventsExample
 {
     public class MailService
     {
-        public void OnvideoEncoded(object source, EventArgs e)
+        public void OnvideoEncoded(object source, VideoEventArgs e)
         {
-            Console.WriteLine("Mail sent...");
+            Console.WriteLine($"Mail sent for Video: {e.Video.Title}");
         }
     }
 }
